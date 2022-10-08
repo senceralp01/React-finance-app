@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { CgMenu, CgClose } from 'react-icons/cg'
 
 const Navbar = () => {
-    const [nav, setNav] = useState(true);
+    const [nav, setNav] = useState(false);
 
     const handleNav = () => {
         setNav(!nav)
@@ -19,9 +19,9 @@ const Navbar = () => {
                 <li className='p-4'>Contact</li>
             </ul>
             <div onClick={handleNav} className='block md:hidden'>
-                {!nav ? <CgClose size={20} /> : <CgMenu size={20} />}
+                {nav ? <CgClose size={20} /> : <CgMenu size={20} />}
             </div>
-            <div className={!nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'fixed left-[-100%]'}>
+            <div className={nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'fixed left-[-100%]'}>
                 <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>FINANCE DATA</h1>
                 <ul className='uppercase p-4'>
                     <li className='p-4 border-b border-b-gray-600'>Home</li>
