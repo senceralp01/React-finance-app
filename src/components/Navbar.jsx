@@ -30,7 +30,6 @@ const Navbar = () => {
                     <li className='p-4 border-b border-b-gray-600'>About</li>
                     <li className='p-4 border-b border-b-gray-600'>Contact</li>
                 </ul>
-
             </div>
         </div>
     )
