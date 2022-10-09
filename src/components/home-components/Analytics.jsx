@@ -1,5 +1,5 @@
 import React from 'react'
-import analytics from '../assets/analytics.jpg'
+import analytics from '../../assets/analytics.jpg'
 
 const Analytics = () => {
   return (

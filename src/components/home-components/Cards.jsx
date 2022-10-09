@@ -1,7 +1,7 @@
 import React from 'react'
-import Single from '../assets/single.png'
-import Double from '../assets/double.png'
-import Triple from '../assets/triple.png'
+import Single from '../../assets/single.png'
+import Double from '../../assets/double.png'
+import Triple from '../../assets/triple.png'
 
 const Cards = () => {
     return (

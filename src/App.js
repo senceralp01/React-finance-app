@@ -1,20 +1,27 @@
 import React from "react";
-import Analytics from "./components/Analytics";
-import Cards from "./components/Cards";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
+import Company from "./components/Company";
+import Home from "./components/Home";
+import Resources from "./components/Resources";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import NotFound from "./components/NotFound";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Newsletter from "./components/Newsletter";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Hero />
-      <Analytics />
-      <Newsletter />
-      <Cards />
-      <Footer />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='company' element={<Company />} />
+          <Route path='resources' element={<Resources />} />
+          <Route path='about' element={<About />} />
+          <Route path='contact' element={<Contact />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
