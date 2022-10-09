@@ -9,7 +9,7 @@ const Navbar = () => {
         setNav(!nav)
     };
 
-    const activated = 'bg-[#71e2be] text-black block p-4 rounded-md text-base font-medium';
+    const activated = 'bg-[#71e2be] text-white block p-4 rounded-md text-base font-medium';
     const deactivated = 'text-gray-300 hover:bg-gray-800 hover:text-white block p-4 rounded-md text-base font-medium';
 
     return (
@@ -28,11 +28,11 @@ const Navbar = () => {
             <div className={nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'fixed left-[-100%]'}>
                 <h1 className='w-full text-3xl font-bold text-[#71e2be] m-4'>FINANCE DATA</h1>
                 <ul className='uppercase p-4'>
-                    <li className='p-4 border-b border-b-gray-600'>Home</li>
-                    <li className='p-4 border-b border-b-gray-600'>Company</li>
-                    <li className='p-4 border-b border-b-gray-600'>Resources</li>
-                    <li className='p-4 border-b border-b-gray-600'>About</li>
-                    <li className='p-4 border-b border-b-gray-600'>Contact</li>
+                    <NavLink onClick={handleNav} to='/' className={({ isActive }) => 'border-b border-b-gray-600' + (isActive ? activated : deactivated)} end>Home</NavLink>
+                    <NavLink onClick={handleNav} to='/company' className={({ isActive }) => 'border-b border-b-gray-600' + (isActive ? activated : deactivated)}>Company</NavLink>
+                    <NavLink onClick={handleNav} to='/resources' className={({ isActive }) => 'border-b border-b-gray-600' + (isActive ? activated : deactivated)}>Resources</NavLink>
+                    <NavLink onClick={handleNav} to='/about' className={({ isActive }) => 'border-b border-b-gray-600' + (isActive ? activated : deactivated)}>About</NavLink>
+                    <NavLink onClick={handleNav} to='/contact' className={({ isActive }) => 'border-b border-b-gray-600' + (isActive ? activated : deactivated)}>Contact</NavLink>
                 </ul>
             </div>
         </div>
