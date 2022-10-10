@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CgMenu, CgClose } from 'react-icons/cg';
 import { NavLink } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
@@ -13,8 +13,11 @@ const Navbar = () => {
 
     const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
     console.log("************");
-    console.log(isMobile, nav);
+    console.log("isMobile:",isMobile, "nav:",nav);
     
+    useEffect(() => {
+        setNav(isMobile);
+    }, [isMobile]);
 
     const activated = 'bg-[#71e2be] text-white block p-4 rounded-md text-base font-medium';
     const deactivated = 'text-gray-300 hover:bg-gray-800 hover:text-white block p-4 rounded-md text-base font-medium';
@@ -30,9 +33,9 @@ const Navbar = () => {
                 <NavLink to='/contact' className={({ isActive }) => (isActive ? activated : deactivated)}>Contact</NavLink>
             </ul>
             <div onClick={handleNav} className='block md:hidden'>
-                {nav&&isMobile ? <CgClose size={20} className='cursor-pointer' /> : <CgMenu size={20} className='cursor-pointer' />}
+                {!nav&&isMobile ? <CgClose size={20} className='cursor-pointer' /> : <CgMenu size={20} className='cursor-pointer' />}
             </div>
-            <div className={nav&&isMobile ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'fixed left-[-100%]'}>
+            <div className={!nav&&isMobile ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'fixed left-[-100%]'}>
                 <h1 className='w-full text-3xl font-bold text-[#71e2be] m-4'>FINANCE DATA</h1>
                 <ul className='uppercase p-4'>
                     <NavLink onClick={handleNav} to='/' className={({ isActive }) => 'border-b border-b-gray-600' + (isActive ? activated : deactivated)} end>Home</NavLink>
