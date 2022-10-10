@@ -6,12 +6,15 @@ import { useMediaQuery } from 'react-responsive';
 const Navbar = () => {
     const [nav, setNav] = useState(false);
 
+    // set hamburger menu
     const handleNav = () => {
         setNav(!nav)
     };
 
     const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
-    console.log(isMobile);
+    console.log("************");
+    console.log(isMobile, nav);
+    
 
     const activated = 'bg-[#71e2be] text-white block p-4 rounded-md text-base font-medium';
     const deactivated = 'text-gray-300 hover:bg-gray-800 hover:text-white block p-4 rounded-md text-base font-medium';
