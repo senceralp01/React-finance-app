@@ -11,3 +11,7 @@ React icon library has been used for icons.
 React-Typed has been used for typing animations.
 
 Responsive design has been developed with TailwindCSS.
+
+👇 Click on the link below to visit the live site 👇
+
+https://sealdofinance.netlify.app/
